@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Accounting</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md fixed-top">
+            <a class="navbar-brand" style="color: white; font-size: 30px;" href="#"><span id="logoLabel"><img id="logo"
+                        src={% static '/images/Logo.png' %} alt="Logo">Accounting</span></a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+                <span>
+                    <img src="images/menu.png" alt="menu button" style="width: 40px; height: 30px;">
+                </span></button>
+
+            <div class="collapse navbar-collapse" id="collapse_target">
+                <ul class="navbar-nav ml-auto lists">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">blog</a>
+                    </li>
+                    <li class="nav-item dropdown d-none d-md-block">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Get Started
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="nav-link" style="color: black;" href="#">Signup</a>
+                            <a class="nav-link" style="color: black;" href="#">Login</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-md-none" href="#">register/login</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+    <section style="height: 40vh;">
+        <div class="signUp-background">
+            <div class="container img-content-signup">
+                <div class="row">
+                    <div class="col-xs-auto">
+                        <h1>Signup</h1>
+                        <h5>Enter your details</h5>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <main>
+        <div class="container-fluid signUpform p-0">
+            <div class="card bg-light">
+                <article class="card-body mx-auto" style="max-width: 600px;">
+                    <h4 class="card-title mt-3 text-center">Create an Account</h4>
+                    <p class="text-center">Get started with your free account</p>
+
+                    <form method="POST" action="/signup">
+                        {% csrf_token %}
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><img src={% static '/images/icons/User.png' %} alt="user icon"></span>
+                            </div>
+                            {{ usersForm.fullname }}
+                        </div> <!-- form-group// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><img src={% static '/images/icons/email.png' %} alt="email-icon">
+                                </span>
+                            </div>
+                            {{ usersForm.email }}
+                        </div> <!-- form-group// -->
+
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><img src={% static '/images/icons/lock.png' %} alt=""></span>
+                            </div>
+                            {{ usersForm.password }}
+                        </div> <!-- form-group// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><img src={% static '/images/icons/lock.png' %} alt=""></span>
+                            </div>
+                            {{ usersForm.password }}
+                        </div> <!-- form-group// -->
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
+                        </div> <!-- form-group// -->
+                        <p class="text-center">Already have an account? <a href="">Log In</a> </p>
+                    </form>
+                </article>
+            </div> <!-- card.// -->
+            </article>
+        </div>
+    </main>
+
+
+
+
+
+
+    <footer>
+        <div class="container-fluid copyrights" style="background-color: #333;">
+
+            <div class="row">
+                <div class="col-lg-2">
+                    <p>Copyright&#169;accounting</p>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src={% static '/script.js' %}></script>
+</body>
+
+</html>
