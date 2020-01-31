@@ -27,11 +27,12 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WebAssignment\accounting\application" />
+      <recent name="E:\WebAssignment\accounting\application\views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\WebAssignment\accounting\application\models" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\WebAssignment\accounting\application\views" />
     </key>
   </component>
   <component name="ServiceViewManager">

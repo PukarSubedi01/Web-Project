@@ -55,6 +55,6 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('index', views.index),
-
+    path('entry', views.entry)
 
 ]

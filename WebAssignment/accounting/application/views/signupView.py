@@ -7,6 +7,6 @@ def signup(request):
     if request.method == "POST":
         usersForm = userForm(request.POST)
         usersForm.save()
-        return redirect()
+        return redirect('/index')
     usersForm = userForm()
     return render(request, "signup.html", {'usersForm': usersForm})

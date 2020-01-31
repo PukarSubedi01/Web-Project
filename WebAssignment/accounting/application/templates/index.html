@@ -42,7 +42,7 @@
                             Get Started
                         </a>
                         <div class="dropdown-menu">
-                            <a class="nav-link" style="color: black;" href="#">Signup</a>
+                            <a class="nav-link" style="color: black;" href="/signup">Signup</a>
                             <a class="nav-link login" style="color: black;" href="#">Login</a>
 
                         </div>
@@ -84,25 +84,25 @@
                     <article class="card-body mx-auto" style="max-width: 600px;">
                         <div class="close">+</div>
                         <h4 class="card-title mt-3 text-center">login</h4>
-                        <form>
-
+                        <form method="POST" action="/entry">
+                            {% csrf_token %}
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><img src={% static '/images/icons/Email.png' %} alt="email-icon">
                                     </span>
                                 </div>
-                                <input name="" class="form-control" placeholder="Email address" type="email">
+                                <input name="email" class="form-control" placeholder="Email address" type="email" />
                             </div> <!-- form-group// -->
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><img src={% static '/images/icons/lock.png' %} alt=""></span>
                                 </div>
-                                <input class="form-control" placeholder="Password" type="password">
+                                <input name="password" class="form-control" placeholder="Password" type="password">
                             </div> <!-- form-group// -->
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-block"> Login </button>
                             </div> <!-- form-group// -->
-                            <p class="text-center">Don't have an account? <a href="">Register</a> </p>
+                            <p class="text-center">Don't have an account? <a href="/signup">Register</a> </p>
                         </form>
                     </article>
                 </div> <!-- card.// -->
