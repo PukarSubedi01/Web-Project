@@ -11,3 +11,13 @@ $(document).ready(function () {
         // $(".nested2").toggleClass("nesting");
     });
 });
+
+//
+function setTotal(){
+    let quantity = document.getElementById('quantity').value;
+    let price = document.getElementById('price').value;
+    let tax = document.getElementById('tax').value;
+    let total=parseInt(((tax/100)*price)+parseInt(price))*quantity;
+    document.getElementById('total').value=total;
+
+}

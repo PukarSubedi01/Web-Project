@@ -15,20 +15,46 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from application import views
+from application.views import billView,customerView,signupView,vendorView,invoiceView,views
+
 urlpatterns = [
+    path('vendors', vendorView.vendors),
+    path('edit/vendor/<int:id>', vendorView.edit_vendor),
+    path('update/vendor/<int:id>', vendorView.update_vendor),
+    path('delete/vendor/<int:id>',vendorView.delete_vendor),
+    path('addvendor', vendorView.addvendor),
+
+    path('customers', customerView.customers),
+    path('addcustomer', customerView.addcustomer),
+    path('edit/customer/<int:id>', customerView.editCustomers),
+    path('update/customer/<int:id>', customerView.update_customer),
+    path('delete/customer/<int:id>', customerView.delete_customer),
+
+    path('signup', signupView.signup),
+
+    path('invoices', invoiceView.invoices),
+    path('invoice/create', invoiceView.newInvoice),
+    path('delete/invoice/<int:id>', invoiceView.delete_invoice),
+    path('edit/invoice/<int:id>', invoiceView.edit_invoice),
+    path('update/invoice/<int:id>', invoiceView.update_invoice),
+
+    path('items/create', views.newItem),
+
+    path('bills', billView.bills),
+    path('bills/create', billView.newbill),
+    path('delete/bill/<int:id>', billView.delete_bill),
+    path('edit/bill/<int:id>', billView.edit_bill),
+    path('update/bill/<int:id>', billView.update_bill),
+
+    path('dashboard', views.dashboard),
+
+    path('items', views.items),
+
+
+
+
     path('admin/', admin.site.urls),
     path('index', views.index),
-    path('signup', views.signup),
-    path('bills', views.bills),
-    path('customers', views.customers),
-    path('dashboard', views.dashboard),
-    path('invoices', views.invoices),
-    path('items', views.items),
-    path('vendors', views.vendors),
-    path('items/create', views.newItem),
-    path('bills/create', views.newBill),
-    path('invoice/create', views.newInvoice),
-    path('customer/add', views.newCustomer),
-    path('vendor/add', views.newVendor)
+
+
 ]
