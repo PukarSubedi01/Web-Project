@@ -21,12 +21,12 @@ def dashboard(request):
 
 @Authentication.valid_user
 def items(request):
-    return render(request, "items.html")
+    return render(request, "items/items.html")
 
 
 @Authentication.valid_user
 def newItem(request):
-    return render(request, "NewItems.html")
+    return render(request, "items/NewItems.html")
 
 
 
