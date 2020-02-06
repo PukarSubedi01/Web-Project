@@ -1,0 +1,73 @@
+{% extends 'homeLayout.html' %}
+{% block content %}
+{% load static %}
+    <section style="height: 100vh;">
+        <div class="index-background">
+
+            <div class="container img-content">
+                <div class="row">
+                    <div class="col-xs-auto">
+                        <h1 style="line-height: 65px;">WELCOME TO OUR <br>FREE ACCOUNTING <br>SOFTWARE</h1>
+                        <button type="button" class="btn btn-rounded btn-lg getStarted login">GET
+                            STARTED</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+
+    </section>
+
+
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4" style="padding-top: 8%;">
+                    <h3>ONLINE ACCOUNTING SOFTWARE FOR BUSINESS</h3>
+                    <p>We are the most reliable source to keep all your accounts organized. From record keeping to
+                        invoicing we have all the tools you need.
+                    </p>
+                </div>
+                <div class="col-lg-8">
+                    <img src={% static '/images/devices.png' %} alt="Pictures of devices" style="height: 100%;width: 100%;" />
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid p-0" style="background-color: #282828;
+        border-color: rgba(255,255,255,0.1);color: white;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4" style="padding-top: 10%;">
+                        <h5>No hidden charges</h5>
+                        <h3>FREE</h3>
+                        <p>No hidden charges of any kind. We assure that you will gain access to every sigle service
+                            that we
+                            offer.</p>
+                    </div>
+                    <div class="col-lg-4" style="padding-top: 10%;">
+                        <h5>Fully cloud based</h5>
+                        <h3>ONLINE</h3>
+                        <p>Since, we are offering you a cloud service, you can access your records from any place no
+                            matter
+                            which device you are using.</p>
+                    </div>
+                    <div class="col-lg-4" style="padding-top: 10%;">
+                        <h5>Open source</h5>
+                        <h3>Secured</h3>
+                        <p>As we talk about your finance, you must insure that everything is safe and software
+                            doesn't
+                            abuse
+                            your records. This software is open source and it provides you full privacy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+{% endblock %}

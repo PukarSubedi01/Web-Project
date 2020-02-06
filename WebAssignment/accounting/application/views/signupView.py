@@ -9,4 +9,4 @@ def signup(request):
         usersForm.save()
         return redirect('/index')
     usersForm = userForm()
-    return render(request, "signup.html", {'usersForm': usersForm})
+    return render(request, "homepages/signup.html", {'usersForm': usersForm})

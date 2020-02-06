@@ -12,14 +12,15 @@
                 <div class="container-fluid">
                     <div class="box">
                         <div class="box-header">
-                            <form method="POST" action="/bills/create">
+                            <form method="POST" id="new" action="/bills/create">
                                 {% csrf_token %}
+<!--                                <input type="hidden" name="user" value="{{request.session.user_id}}"/>-->
                                 <div id="newBillitems">
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <span>Bill date:</span><br>
-                                                <input type="date" name="bill_date">
+                                                <span>Bill date:</span></span><span id="error_messageDate"></span> <br>
+                                                <input type="date" id="Date" onfocusout="check_fields(this,'error_messageDate')" name="bill_date">
                                             </div>
                                             <div class="col-md-6">
                                                 <span>Vendor:</span><br>
@@ -46,7 +47,7 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td><input type="text" placeholder="Enter an item" name="items"/></td>
+                                                            <td><input type="text" id="itemName" placeholder="Enter an item" name="items"/></td>
                                                             <td><input type="number" id="quantity" placeholder="Enter Quantity" name="quantity" onchange="setTotal()" /></td>
                                                             <td><input type="number" id="price"  placeholder="Enter price" name="price" onchange="setTotal()" /></td>
                                                             <td><input type="number" id="tax" placeholder="tax in %" name="tax" onchange="setTotal()"/></td>

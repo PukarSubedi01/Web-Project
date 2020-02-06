@@ -182,19 +182,11 @@ nav img {
 
 .add-New {
     margin-left: 25px;
+
 }
 
-.add-New button {
-    background-color: #212121;
-    color: #878d8d;
-    padding: 2px 10px 2px 10px;
-    border: none;
-    border-color: #212121;
-}
-
-.add-New button:hover {
-    background-color: #303337;
-    color: #878d8d;
+.add-New a{
+color:#878d8d;
 }
 
 
@@ -261,12 +253,16 @@ textarea {
     width: 100%;
 }
 
-#items input,
+#Invoiceitems input,
 select,
 textarea {
     width: 80%;
 }
-
+#Billitems input,
+select,
+textarea {
+    width: 80%;
+}
 #items input,
 select,
 textarea {

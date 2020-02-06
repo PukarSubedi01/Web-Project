@@ -1,0 +1,66 @@
+{% extends 'dashLayout.html' %}
+{% block content %}
+                <div class="container-fluid" style="padding-left: 28px;">
+                    <div class="row">
+                        <div class="dashHeading">
+                            <h4> Edit Items</h4>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="container-fluid">
+                    <div class="box">
+                        <div class="box-header">
+                            <form method="POST" id="NewItemForm" action="/update/item/{{item.id}}">
+                                {% csrf_token %}
+                                <div id="newItems">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <span>Name:</span><span id="error_messageName" style="margin-left:2%;"></span><br>
+                                                <input type="text" id="itemName" onfocusout="check_fields(this,'error_messageName')"  value="{{item.item_name}}" name="item_name">
+                                            </div>
+                                             <div class="col-md-6">
+                                                <span>Quantity:</span><span id="error_messagQnty" style="margin-left:2%;"></span><br>
+                                                <input type="number" id="qnty" onfocusout="check_fields(this,'error_messagQnty')" value="{{item.quantity}}" name="quantity">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-md-6">
+                                                <span>Purchase price:</span> <span id="error_messagePurchase"
+                                                                  style="margin-left:2%;"></span><br>
+                                                <input type="number" id="pPrice" onfocusout="check_fields(this,'error_messagePurchase')"   value="{{item.purchase_price}}" name="purchase_price">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <span>Sales price:</span><span id="error_messageSales"
+                                                               style="margin-left:2%;"></span><br>
+                                                <input type="number" id="sPrice" onfocusout="check_fields(this,'error_messageSales')" value="{{item.sales_price}}" name="sales_price">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-md-6">
+                                                <span>Tax:</span> <span id="error_messageTax" style="margin-left:2%;"></span><br>
+                                                <input type="number" id="tax" onfocusout="check_fields(this,'error_messageTax')" value="{{item.tax}}" name="tax">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="margin-top: 8%;margin-left: 1.5%;">
+                                                <button type="submit" class="btn btn-dark">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+{% endblock %}

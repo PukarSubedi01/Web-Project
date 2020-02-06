@@ -12,14 +12,14 @@
                 <div class="container-fluid">
                     <div class="box">
                         <div class="box-header">
-                            <form method="POST" action="/update/invoice/{{invoices.id}}">
+                            <form method="POST" id="new" action="/update/invoice/{{invoices.id}}">
                                  {% csrf_token %}
                                 <div id="newInvoiceitems">
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <span>Invoice date:</span><br>
-                                                <input type="date" value="{{customer.invoice_date}}" name = "invoice_date">
+                                                <span>Invoice date:</span><span id="error_messageDate"></span><br>
+                                                <input type="date" id="Date" onfocusout="check_fields(this,'error_messageDate')" value="{{customer.invoice_date}}" name = "invoice_date">
                                             </div>
                                             <div class="col-md-6">
                                                 <span>Customer:</span><br>
@@ -45,7 +45,7 @@
                                                     </thead>
                                                       <tbody>
                                                         <tr>
-                                                            <td><input type="text" value="{{invoices.items}}" name="items"/></td>
+                                                            <td><input type="text" id="itemName" value="{{invoices.items}}" name="items"/></td>
                                                             <td><input type="number" id="quantity" value="{{invoices.quantity}}" name="quantity" onchange="setTotal()" /></td>
                                                             <td><input type="number" id="price"  value="{{invoices.price}}" name="price" onchange="setTotal()" /></td>
                                                             <td><input type="number" id="tax" value="{{invoices.tax}}" name="tax" onchange="setTotal()"/></td>

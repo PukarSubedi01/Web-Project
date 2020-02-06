@@ -43,7 +43,9 @@ nav.navCustom #logo {
     width: 60px;
     transition: .3s;
 }
-
+nav img {
+    filter: invert(40%);
+}
 
 
 .lists li a {
@@ -83,11 +85,11 @@ button.getStarted:hover {
     background-color: black;
     border-color: black;
     color: white;
-    transition: .4s;
+    transition: .2s;
 }
 
 .index-background {
-    background: url(images/Wall.png);
+    background: url(../images/Wall.png);
     background-size: cover;
     height: 100%;
     background-position: center;
@@ -104,7 +106,7 @@ button.getStarted:hover {
 
 /* signup page css */
 .signUp-background {
-    background: url(images/Wall.png);
+    background: url(../images/Wall.png);
     background-size: cover;
     height: 100%;
     background-position: center;
@@ -155,4 +157,7 @@ button.getStarted:hover {
     color: rgba(255, 255, 255, 0.25);
     padding-top: 1%;
     padding-bottom: 1%;
+}
+.error_form{
+color:red;
 }

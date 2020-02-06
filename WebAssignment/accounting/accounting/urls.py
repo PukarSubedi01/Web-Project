@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from application.views import billView,customerView,signupView,vendorView,invoiceView,views
+from application.views import billView,customerView,signupView,vendorView,invoiceView, itemsView ,views
 
 urlpatterns = [
     path('vendors', vendorView.vendors),
@@ -38,7 +38,11 @@ urlpatterns = [
     path('edit/invoice/<int:id>', invoiceView.edit_invoice),
     path('update/invoice/<int:id>', invoiceView.update_invoice),
 
-    path('items/create', views.newItem),
+    path('items/create', itemsView.newItem),
+    path('items', itemsView.item),
+    path('delete/item/<int:id>', itemsView.delete_item),
+    path('edit/item/<int:id>', itemsView.editItem),
+    path('update/item/<int:id>', itemsView.update_item),
 
     path('bills', billView.bills),
     path('bills/create', billView.newbill),
@@ -48,13 +52,18 @@ urlpatterns = [
 
     path('dashboard', views.dashboard),
 
-    path('items', views.items),
-
-
 
 
     path('admin/', admin.site.urls),
     path('index', views.index),
-    path('entry', views.entry)
+    path('entry', views.entry),
+
+    path('searchInv', invoiceView.searchInv),
+    path('searchItem', itemsView.searchItem),
+    path('searchCustomers', customerView.searchCustomers),
+    path('searchBills', billView.searchBills),
+path('searchVendors', vendorView.searchVendors),
+
+    path('logout', views.logout)
 
 ]

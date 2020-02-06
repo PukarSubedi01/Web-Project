@@ -1,65 +1,66 @@
 {% extends 'dashLayout.html' %}
 {% block content %}
-                <div class="container-fluid" style="padding-left: 28px;">
-                    <div class="row">
-                        <div class="dashHeading">
-                            <h4> New Items</h4>
+<div class="container-fluid" style="padding-left: 28px;">
+    <div class="row">
+        <div class="dashHeading">
+            <h4> New Items</h4>
+        </div>
+
+    </div>
+
+</div>
+<div class="container-fluid">
+    <div class="box">
+        <div class="box-header">
+            <form id="NewItemForm" method="POST" action="/items/create">
+                {% csrf_token %}
+                <div id="newItems">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span>Name:</span><span id="error_messageName" style="margin-left:2%;"></span><br>
+                                <input type="text" id="itemName" onfocusout="check_fields(this,'error_messageName')" placeholder="Enter name"
+                                       name="item_name">
+                            </div>
+                            <div class="col-md-6">
+                                <span>Quantity:</span><span id="error_messagQnty" style="margin-left:2%;"></span><br>
+                                <input type="number" id="qnty" onfocusout="check_fields(this,'error_messagQnty')"
+                                       placeholder="--Enter quantity" name="quantity">
+                            </div>
                         </div>
+                        <div class="row">
 
-                    </div>
+                            <div class="col-md-6">
+                                <span>Purchase price:</span><span id="error_messagePurchase"
+                                                                  style="margin-left:2%;"></span><br>
+                                <input type="number" id="pPrice" onfocusout="check_fields(this,'error_messagePurchase')"  placeholder="--Enter purchase price"
+                                       name="purchase_price">
+                            </div>
+                            <div class="col-md-6">
+                                <span>Sales price:</span><span id="error_messageSales"
+                                                               style="margin-left:2%;"></span><br>
+                                <input type="number" id="sPrice" onfocusout="check_fields(this,'error_messageSales')" placeholder="--Enter Sales price" name="sales_price">
+                            </div>
+                        </div>
+                        <div class="row">
 
-                </div>
-                <div class="container-fluid">
-                    <div class="box">
-                        <div class="box-header">
-                            <form action="">
-                                <div id="newItems">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <span>Name:</span><br>
-                                                <input type="text" placeholder="Enter name">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <span>Category:</span><br>
-                                                <input type="text" name="" id="" placeholder="--Select category--">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <span>Quantity:</span><br>
-                                                <input type="text" placeholder="--Enter quantity">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <span>Purchase price:</span><br>
-                                                <input type="text" placeholder="--Enter purchase price">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <span>Sales price:</span><br>
-                                                <input type="text" placeholder="--Enter Sales price">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <span>Tax:</span><br>
-                                                <input type="text" placeholder="--Enter tax %">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div style="margin-top: 8%;margin-left: 1.5%;">
-                                                <button type="submit" class="btn btn-dark">Save</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                </div>
-
-                            </form>
+                            <div class="col-md-6">
+                                <span>Tax:</span><span id="error_messageTax" style="margin-left:2%;"></span><br>
+                                <input type="number" id="tax" onfocusout="check_fields(this,'error_messageTax')" placeholder="--Enter tax %" name="tax">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div style="margin-top: 8%;margin-left: 1.5%;">
+                                <button type="submit" class="btn btn-dark">Save</button>
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
-{% endblock %}
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

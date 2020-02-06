@@ -6,7 +6,7 @@
                             <h4>Vendors</h4>
                         </div>
                         <div class="add-New">
-                            <button type="button" class="btn btn-primary">Add new</button>
+                            <a href="addvendor" class="btn btn-dark">Add new</a>
                         </div>
                     </div>
 
@@ -20,16 +20,10 @@
                                         <div class="row">
                                             <div class="col-md-5">
                                                 <span>Search: </span>
-                                                <input type="text" placeholder="Type to search by name" />
+                                                <input type="text" id="searchVendors" placeholder="Type to search by name" />
                                             </div>
-                                            <div class="col-md-5">
-                                                <span>Phone:</span>
-                                                <input type="text" placeholder="Search by phone" />
-                                            </div>
-                                            <div class="col-md-2">
-                                                <button type="button" class="btn btn-dark"
-                                                    style="margin-top: 12%;">Filter</button>
-                                            </div>
+
+
                                         </div>
                                     </div>
 
@@ -62,6 +56,12 @@
                                     </thead>
                                 </table>
                             </div>
+                            <form style="float:right;" action="/vendors" method="POST">
+                                {% csrf_token %}
+                                 <button class="btn btn-outline-secondary" type="submit" id="prev" value="prev" name="prev">Previous</button>
+                                 <input class="form" style="width:40px;height:30px;" type="number" name="page" id="page" value="{{page}}" min="1" readonly>
+                                 <button class="btn btn-outline-secondary" type="submit" id="next" value="next" name="next">Next</button>
+</form>
 
                         </div>
                     </div>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load static %}
-    <link rel="stylesheet" href={% static '/style.css' %}>
+    <link rel="stylesheet" href={% static '/stylesheets/style.css' %}>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Accounting</title>
@@ -16,7 +16,7 @@
 
     <header>
         <nav class="navbar navbar-expand-md fixed-top">
-            <a class="navbar-brand" style="color: white; font-size: 30px;" href="#"><span id="logoLabel"><img id="logo"
+            <a class="navbar-brand" style="color: white; font-size: 30px;" href="/index"><span id="logoLabel"><img id="logo"
                         src={% static '/images/Logo.png' %} alt="Logo">Accounting</span></a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
                 <span>
@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse" id="collapse_target">
                 <ul class="navbar-nav ml-auto lists">
                     <li>
-                        <a class="nav-link" href="index.html">home</a>
+                        <a class="nav-link" href="/index">home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">features</a>
@@ -57,26 +57,9 @@
 
         </nav>
     </header>
-    <section style="height: 100vh;">
-        <div class="index-background">
-
-            <div class="container img-content">
-                <div class="row">
-                    <div class="col-xs-auto">
-                        <h1 style="line-height: 65px;">WELCOME TO OUR <br>FREE ACCOUNTING <br>SOFTWARE</h1>
-                        <button type="button" class="btn btn-rounded btn-lg getStarted">GET
-                            STARTED</button>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-        </div>
-
-    </section>
-    <div class="LoginForm">
+ {% block content %}
+    {% endblock %}
+<div class="LoginForm">
         <div class="container">
             <div class="row" style="justify-content: center;">
 
@@ -84,6 +67,10 @@
                     <article class="card-body mx-auto" style="max-width: 600px;">
                         <div class="close">+</div>
                         <h4 class="card-title mt-3 text-center">login</h4>
+                        {% for message in messages %}
+                        <script>alert('{{message}}')</script>
+
+                        {% endfor %}
                         <form method="POST" action="/entry">
                             {% csrf_token %}
                             <div class="form-group input-group">
@@ -111,69 +98,13 @@
 
         </div>
     </div>
-
-
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4" style="padding-top: 8%;">
-                    <h3>ONLINE ACCOUNTING SOFTWARE FOR BUSINESS</h3>
-                    <p>We are the most reliable source to keep all your accounts organized. From record keeping to
-                        invoicing we have all the tools you need.
-                    </p>
-                </div>
-                <div class="col-lg-8">
-                    <img src={% static '/images/devices.png' %} alt="Pictures of devices" style="height: 100%;width: 100%;" />
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid p-0" style="background-color: #282828;
-        border-color: rgba(255,255,255,0.1);color: white;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4" style="padding-top: 10%;">
-                        <h5>No hidden charges</h5>
-                        <h3>FREE</h3>
-                        <p>No hidden charges of any kind. We assure that you will gain access to every sigle service
-                            that we
-                            offer.</p>
-                    </div>
-                    <div class="col-lg-4" style="padding-top: 10%;">
-                        <h5>Fully cloud based</h5>
-                        <h3>ONLINE</h3>
-                        <p>Since, we are offering you a cloud service, you can access your records from any place no
-                            matter
-                            which device you are using.</p>
-                    </div>
-                    <div class="col-lg-4" style="padding-top: 10%;">
-                        <h5>Open source</h5>
-                        <h3>Secured</h3>
-                        <p>As we talk about your finance, you must insure that everything is safe and software
-                            doesn't
-                            abuse
-                            your records. This software is open source and it provides you full privacy.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-    </main>
-    <footer>
+ <footer>
         <div class="container-fluid copyrights" style="background-color: #333;">
 
             <div class="row">
                 <div class="col-lg-2">
                     <p>Copyright&#169;accounting</p>
                 </div>
-
-
-
-
-
-
-
             </div>
 
         </div>
@@ -193,7 +124,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src={% static '/script.js' %}></script>
+    <script type="text/javascript" src={% static '/scripts/script.js' %}></script>
 </body>
 
 </html>

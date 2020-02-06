@@ -6,7 +6,7 @@
                             <h4>Bills</h4>
                         </div>
                         <div class="add-New">
-                            <button type="button" class="btn btn-primary">Add new</button>
+                            <a href="/bills/create" class="btn btn-dark">Add new</a>
                         </div>
                     </div>
 
@@ -18,24 +18,13 @@
                                 <div id="Billitems">
                                     <div class="container-fluid">
                                         <div class="row">
-                                            <div><span>Search: </span><br>
-                                                <input type="text" placeholder="Type to search" />
+
+                                            <div class="col-md-5"><span>Bill number: </span><br>
+                                                <input type="text" id="searchBills" placeholder="--Search by bill number" />
                                             </div>
 
-                                            <div><span>Bill number: </span><br>
-                                                <input type="text" placeholder="--Enter bill number" />
-                                            </div>
-                                            <div><span>Vendor: </span><br>
-                                                <input type="text" placeholder="--Enter vendor" />
-                                            </div>
-                                            <div><span>Select date: </span><br>
-                                                <input type="date" placeholder="--Enter vendor" />
-                                            </div>
 
-                                            <div>
-                                                <button type="submit" class="btn btn-dark"
-                                                    style="margin-top: 40%;">Filter</button>
-                                            </div>
+
                                         </div>
                                     </div>
 
@@ -76,7 +65,12 @@
                                     </tbody>
                             </table>
                         </div>
-
+<form style="float:right;" action="/bills" method="POST">
+                                {% csrf_token %}
+                                 <button class="btn btn-outline-secondary" type="submit" id="prev" value="prev" name="prev">Previous</button>
+                                 <input class="form" style="width:40px;height:30px;" type="number" name="page" id="page" value="{{page}}" min="1" readonly>
+                                 <button class="btn btn-outline-secondary" type="submit" id="next" value="next" name="next">Next</button>
+</form>
                     </div>
                 </div>
         </div>

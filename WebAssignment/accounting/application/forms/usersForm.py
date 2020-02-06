@@ -6,7 +6,8 @@ class userForm(forms.ModelForm):
         attrs= {
             'class': 'form-control',
             'placeholder': 'Full name',
-            'size':'60'
+            'size':'60',
+            'id' : 'fullname'
             }
     )
     )
@@ -15,17 +16,20 @@ class userForm(forms.ModelForm):
             'class': 'form-control',
             'placeholder': 'E-mail address',
             'size': '60',
-            'type': 'email'
+            'type': 'email',
+            'id': 'email'
         }
     ))
     password = forms.CharField(widget=forms.TextInput(
         attrs={
             'class': 'form-control',
-            'placeholder': 'Create password',
+            'placeholder': 'Re-type password',
             'size': '60',
-            'type': 'password'
+            'type': 'password',
+            'id': 're-password'
         }
     ))
+
     class Meta:
         model=user
         fields="__all__"

@@ -23,18 +23,19 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/accounting/application/models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\WebAssignment\accounting\application\models" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WebAssignment\accounting\application\templates\homepages" />
       <recent name="E:\WebAssignment\accounting\application\static\stylesheets" />
       <recent name="E:\WebAssignment\accounting\application\static\scripts" />
       <recent name="E:\WebAssignment\accounting\application" />
       <recent name="E:\WebAssignment\accounting\application\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WebAssignment\accounting\application\models" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -71,10 +72,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="517" y="243" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1580204271190" />
-    <state x="549" y="191" key="FileChooserDialogImpl" timestamp="1580122081057">
+    <state x="549" y="191" key="FileChooserDialogImpl" timestamp="1580633854998">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="191" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1580122081057" />
+    <state x="549" y="191" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1580633854998" />
     <state x="279" y="66" key="SettingsEditor" timestamp="1580122134563">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

@@ -12,28 +12,28 @@
                 <div class="container-fluid">
                     <div class="box">
                         <div class="box-header">
-                            <form method="POST" action="/update/vendor/{{vendors.id}}" enctype="multipart/form-data">
+                            <form method="POST" id="custVend" action="/update/vendor/{{vendors.id}}" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <div id="newItems">
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <span>Name:</span><br>
-                                                 <input type="text" value="{{vendors.name}}" name="name" />
+                                                <span>Name:</span> <span id="error_messageName"></span><br>
+                                                 <input type="text" id="name" onfocusout="check_fields(this,'error_messageName')" value="{{vendors.name}}" name="name" />
                                             </div>
                                             <div class="col-md-6">
-                                                <span>Email:</span><br>
-                                                 <input type="text" value="{{vendors.email}}" name="email" />
+                                                <span>Email:</span> <span id="error_messageEmail"></span><br>
+                                                 <input type="text" id="email" onfocusout="check_fields(this,'error_messageEmail')" value="{{vendors.email}}" name="email" />
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <span>Phone number:</span><br>
-                                                 <input type="text" value="{{vendors.phone}}" name="phone" />
+                                                <span>Phone number:</span>  <span id="error_messagePhn"></span><br>
+                                                 <input type="text" id="phn" onfocusout="check_fields(this,'error_messagePhn')" value="{{vendors.phone}}" name="phone" />
                                             </div>
                                             <div class="col-md-6">
-                                                <span>Address:</span><br>
-                                                 <input type="text" value="{{vendors.address}}" name="address" />
+                                                <span>Address:</span> <span id="error_messageAdd"></span><br>
+                                                 <input type="text" id="address" onfocusout="check_fields(this,'error_messageAdd')" value="{{vendors.address}}" name="address" />
                                             </div>
                                         </div>
 

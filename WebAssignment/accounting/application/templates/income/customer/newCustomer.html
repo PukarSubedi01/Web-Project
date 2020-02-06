@@ -12,29 +12,29 @@
                 <div class="container-fluid">
                     <div class="box">
                         <div class="box-header">
-                           <form method="POST" action="/addcustomer">
+                           <form method="POST" id="custVend" action="/addcustomer">
                                 {% csrf_token %}
                                 <div id="newItems">
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <span>Name:</span><br>
-                                                {{ customersForm.name }}
+                                                <span>Name:</span><span id="error_messageName"></span><br>
+                                               <input type="text" placeholder="--Enter customers name" id="name" onfocusout="check_fields(this,'error_messageName')" name="name" />
                                             </div>
                                             <div class="col-md-6">
-                                                <span>Email:</span><br>
-                                                {{ customersForm.email }}
-                                            </div>
+                                                 <span>Email:</span><span id="error_messageEmail"></span><br>
+                                                <input type="text" placeholder="--Enter email" id="email" onfocusout="check_fields(this,'error_messageEmail')" name="email" />
+                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-md-6">
-                                                <span>Phone number:</span><br>
-                                               {{ customersForm.phone }}
+                                                <span>Phone number:</span> <span id="error_messagePhn"></span><br>
+                                              <input type="text" placeholder="--Enter phone number" id="phn" onfocusout="check_fields(this,'error_messagePhn')" name="phone" />
                                             </div>
                                              <div class="col-md-6">
-                                                <span>Address:</span><br>
-                                               {{ customersForm.address }}
+                                                <span>Address:</span> <span id="error_messageAdd"></span><br>
+                                               <input type="text" placeholder="--Enter address" id="address" onfocusout="check_fields(this,'error_messageAdd')" name="address" />
                                             </div>
                                         </div>
                                         <div class="row">

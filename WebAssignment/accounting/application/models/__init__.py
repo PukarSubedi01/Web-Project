@@ -3,3 +3,4 @@ from . import customer
 from . import invoice
 from . import user
 from . import vendor
+from . import items
