@@ -1,33 +1,75 @@
 {% extends 'dashLayout.html' %}
 {% block content %}
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-<div class="container-fluid">
-
+<div class="chart-section">
+    <div class="charts">
+        <div class="chart">
+            <div class="head-chart">
+                <h5>Your income and expenses</h5>
+            </div>
+            <div class="body-chart">
+                <canvas id="myChart" height="135px"></canvas>
+            </div>
+        </div>
+    </div>
 </div>
-<canvas id="myChart" width="40%" height="20%"></canvas>
-<script>
-var expense = "{{ expense }}"
-console.log(expense)
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-        labels: ['Red', 'Blue'],
-        datasets: [{
-            label: '# of Votes',
-            data: [900, 1000],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
 
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-            ],
-            borderWidth: 1
-        }]
-    }
-});
+
+
+
+<script>
+
+	$(document).ready(()=>{
+		$(".sidebar").find(".active").removeClass("active");
+		$("#dashboard1").addClass("active")})
+
+    function ajaxFunc(urls) {
+        let Total = 0;
+        $.ajax({
+            method: "get",
+            url: urls,
+            success: function (result) {
+
+                for (r of result) {
+                    Total += parseInt(r.total);
+                }
+            },
+            async: false
+        })
+        return Total
+    };
+
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Income', 'Expense'],
+            datasets: [{
+                label: '# of Votes',
+                data: [ajaxFunc("/getIncome"), ajaxFunc("/getExpense")],
+                backgroundColor: [
+
+                    'rgba(153, 102, 255,0.7)',
+                    'rgba(255, 159, 64,0.7)'
+                ],
+                borderColor: [
+
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        maintainAspectRatio: false,
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
 </script>
 {% endblock %}

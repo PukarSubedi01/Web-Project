@@ -68,5 +68,5 @@ def delete_bill(request, id):
 
 @Authentication.valid_user
 def searchBills(request):
-    bills = bill.objects.filter(id__icontains=request.GET['searchBills']).values()
+    bills = bill.objects.filter(id__icontains=request.GET['searchBills'],user_id=request.session['user_id']).values()
     return JsonResponse(list(bills), safe=False)

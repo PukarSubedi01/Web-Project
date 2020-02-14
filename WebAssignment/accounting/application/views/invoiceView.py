@@ -67,5 +67,5 @@ def delete_invoice(request, id):
 
 @Authentication.valid_user
 def searchInv(request):
-    invoices = invoice.objects.filter(id__icontains=request.GET['searchInv']).values()
+    invoices = invoice.objects.filter(id__icontains=request.GET['searchInv'],user_id=request.session['user_id']).values()
     return JsonResponse(list(invoices), safe=False)

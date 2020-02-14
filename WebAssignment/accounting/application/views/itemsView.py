@@ -62,5 +62,5 @@ def delete_item(request, id):
 
 @Authentication.valid_user
 def searchItem(request):
-    item = items.objects.filter(item_name__icontains = request.GET['searchItem']).values()
+    item = items.objects.filter(item_name__icontains = request.GET['searchItem'],user_id=request.session['user_id']).values()
     return JsonResponse(list(item),safe=False)

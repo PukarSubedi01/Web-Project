@@ -65,13 +65,19 @@
                                     </tbody>
                             </table>
                         </div>
-<form style="float:right;" action="/bills" method="POST">
+                    <form style="float:right;" action="/bills" method="POST">
                                 {% csrf_token %}
                                  <button class="btn btn-outline-secondary" type="submit" id="prev" value="prev" name="prev">Previous</button>
                                  <input class="form" style="width:40px;height:30px;" type="number" name="page" id="page" value="{{page}}" min="1" readonly>
                                  <button class="btn btn-outline-secondary" type="submit" id="next" value="next" name="next">Next</button>
-</form>
+                    </form>
                     </div>
                 </div>
         </div>
+<script>
+$(document).ready(()=>{
+		$(".sidebar").find(".active").removeClass("active");
+		$("#bills").addClass("active")
+		});
+		</script>
        {% endblock %}

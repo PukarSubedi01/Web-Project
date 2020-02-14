@@ -123,7 +123,7 @@ $(document).ready(function() {
      });
 
     $(".sideMenuToggler").on("click", function (){
-        $(".wrapper").toggleClass("active");
+        $(".wrapper").toggleClass("activate");
     });
     $(".tree1").on("click", function () {
         $(".nested1").toggleClass("nesting1");
@@ -134,76 +134,6 @@ $(document).ready(function() {
         // $(".nested2").toggleClass("nesting");
     });
 });
-
-
-//form validation block
-//$(document).ready(function() {
-//
-//         $("#error_messageName").hide();
-//          $("#error_messagQnty").hide();
-//          $("#error_messagePurchase").hide();
-//          $("#error_messageSales").hide();
-//          $("#error_messageTax").hide();
-//
-//         var error_name = false;
-//         var error_email = false;
-//         var error_password = false;
-//         var error_retype_password = false;
-//         $(".fields").focusout(function(){
-//            check_fields();
-//         });
-//
-//
-//
-//         function check_fields() {
-//            var fieldValue = $(".fields").val();
-//            if (fieldValue !== '') {
-//               $(".error_message").hide();
-//               $(".fields").css("border","2px solid #34F458");
-//            } else {
-//               $(".error_message").html("*required");
-//               $(".error_message").show();
-//               $(".fields").css("border","2px solid #F90A0A");
-//               error_name = true;
-//            }
-//         }
-//
-//
-//
-//         function check_email() {
-//            var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-//            var email = $("#email").val();
-//            if (pattern.test(email) && email !== '') {
-//               $("#email_error_message").hide();
-//               $("#email").css("border","2px solid #34F458");
-//            } else {
-//               $("#email_error_message").html("*Invalid Email");
-//               $("#email_error_message").show();
-//               $("#email").css("border","2px solid #F90A0A");
-//               error_email = true;
-//            }
-//         }
-//         $("#newInvForm").submit(function() {
-//            error_fullname = false;
-//            error_email = false;
-//            error_password = false;
-//            error_retype_password = false;
-//
-//            check_fullName();
-//            check_email();
-//            check_password();
-//            check_retype_password();
-//
-//            if (error_fullname === false && error_email === false && error_password === false && error_retype_password === false) {
-//               alert("Registration Successfull");
-//               return true;
-//            } else {
-//               alert("Please correctly fill all the fields");
-//               return false;
-//            }
-//
-//         });
-//      });
 
 //calculating total amount in bills and invoives
 function setTotal(){
@@ -252,9 +182,8 @@ function check_fields($event,errorMsgs){
            let purchase_price = $("#price").val();
            let sales_price = $("#tax").val();
            let tax = $("#total").val();
-
-
-            if (itemName=="" || quantity=="" || purchase_price=="" || sales_price=="" || tax=="" || date=="") {
+           let selectVal = $("#selectVal").val();
+            if (itemName=="" || quantity=="" || purchase_price=="" || sales_price=="" || tax=="" || date=="" || selectVal==null) {
                alert("Please correctly fill all the fields");
                return false;
             } else {
@@ -284,3 +213,4 @@ function check_fields($event,errorMsgs){
 if($("#page").val() == 1){
     $("#prev").prop("disabled",true)
 }
+

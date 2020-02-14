@@ -46,7 +46,7 @@ $(document).ready(function() {
          });
 
          function check_fullName() {
-            var pattern = /^[a-zA-Z]*$/;
+            var pattern = /^[a-zA-Z\-\s]+$/;
             var name = $("#fullname").val();
             if (pattern.test(name) && name !== '') {
                $("#name_error_message").hide();
@@ -111,7 +111,7 @@ $(document).ready(function() {
             check_retype_password();
 
             if (error_fullname === false && error_email === false && error_password === false && error_retype_password === false) {
-               alert("Registration Successfull");
+              
                return true;
             } else {
                alert("Please correctly fill all the fields");

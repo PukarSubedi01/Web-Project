@@ -14,7 +14,6 @@
                         <div class="box-header">
                             <form method="POST" id="new" action="/bills/create">
                                 {% csrf_token %}
-<!--                                <input type="hidden" name="user" value="{{request.session.user_id}}"/>-->
                                 <div id="newBillitems">
                                     <div class="container-fluid">
                                         <div class="row">
@@ -23,8 +22,8 @@
                                                 <input type="date" id="Date" onfocusout="check_fields(this,'error_messageDate')" name="bill_date">
                                             </div>
                                             <div class="col-md-6">
-                                                <span>Vendor:</span><br>
-                                                <select name="vendor">
+                                                <span>Vendor:</span><span id="error_messageVendor"></span><br>
+                                                <select name="vendor" id="selectVal">
                                                     {% for vendor in vendors %}
                                                     <option value="{{vendor.id}}">{{vendor.name}}</option>
                                                     {% endfor %}
@@ -74,4 +73,10 @@
                         </div>
                     </div>
                 </div>
+<script>
+$(document).ready(()=>{
+		$(".sidebar").find(".active").removeClass("active");
+		$("#bills").addClass("active")
+		});
+		</script>
             {% endblock %}

@@ -28,11 +28,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WebAssignment\accounting\application\static\images\icons" />
       <recent name="E:\WebAssignment\accounting\application\templates\homepages" />
       <recent name="E:\WebAssignment\accounting\application\static\stylesheets" />
       <recent name="E:\WebAssignment\accounting\application\static\scripts" />
       <recent name="E:\WebAssignment\accounting\application" />
-      <recent name="E:\WebAssignment\accounting\application\views" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\WebAssignment\accounting\application\models" />
@@ -76,9 +76,24 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="191" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1580633854998" />
-    <state x="279" y="66" key="SettingsEditor" timestamp="1580122134563">
+    <state x="279" y="66" key="SettingsEditor" timestamp="1581436278081">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="279" y="66" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1580122134563" />
+    <state x="279" y="66" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1581436278081" />
+    <state x="473" y="66" width="590" height="732" key="find.popup" timestamp="1581479979797">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="473" y="66" width="590" height="732" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1581479979797" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/accounting/application/views/views.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

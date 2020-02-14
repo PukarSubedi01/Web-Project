@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from application.views import billView,customerView,signupView,vendorView,invoiceView, itemsView ,views
+from application.views import billView, customerView, signupView, vendorView, invoiceView, itemsView, views
 
 urlpatterns = [
     path('vendors', vendorView.vendors),
     path('edit/vendor/<int:id>', vendorView.edit_vendor),
     path('update/vendor/<int:id>', vendorView.update_vendor),
-    path('delete/vendor/<int:id>',vendorView.delete_vendor),
+    path('delete/vendor/<int:id>', vendorView.delete_vendor),
     path('addvendor', vendorView.addvendor),
 
     path('customers', customerView.customers),
@@ -51,8 +51,8 @@ urlpatterns = [
     path('update/bill/<int:id>', billView.update_bill),
 
     path('dashboard', views.dashboard),
-
-
+    path('getExpense', views.getExpense),
+    path('getIncome', views.getIncome),
 
     path('admin/', admin.site.urls),
     path('index', views.index),
@@ -62,7 +62,7 @@ urlpatterns = [
     path('searchItem', itemsView.searchItem),
     path('searchCustomers', customerView.searchCustomers),
     path('searchBills', billView.searchBills),
-path('searchVendors', vendorView.searchVendors),
+    path('searchVendors', vendorView.searchVendors),
 
     path('logout', views.logout)
 

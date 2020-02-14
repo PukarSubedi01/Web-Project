@@ -43,7 +43,7 @@
                             <table class="table">
                                     <tr>
                                         <th>Invoice number</th>
-                                        <th>Customer</th>
+                                        <th>Customer ID</th>
                                         <th>Items</th>
                                         <th>Amount</th>
                                         <th>Invoice Date</th>
@@ -71,4 +71,10 @@
                     </div>
                 </div>
         </div>
+<script>
+$(document).ready(()=>{
+		$(".sidebar").find(".active").removeClass("active");
+		$("#invoices").addClass("active")
+		});
+		</script>
        {% endblock %}

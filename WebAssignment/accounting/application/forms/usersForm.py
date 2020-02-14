@@ -5,7 +5,7 @@ class userForm(forms.ModelForm):
     fullname = forms.CharField(widget=forms.TextInput(
         attrs= {
             'class': 'form-control',
-            'placeholder': 'Full name',
+            'placeholder': 'Enter your name',
             'size':'60',
             'id' : 'fullname'
             }

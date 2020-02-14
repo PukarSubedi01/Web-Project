@@ -57,6 +57,6 @@ def delete_vendor(request, id):
 
 @Authentication.valid_user
 def searchVendors(request):
-    vendors = vendor.objects.filter(name__icontains=request.GET['searchVendors']).values()
+    vendors = vendor.objects.filter(name__icontains=request.GET['searchVendors'],user_id=request.session['user_id']).values()
     return JsonResponse(list(vendors), safe=False)
 

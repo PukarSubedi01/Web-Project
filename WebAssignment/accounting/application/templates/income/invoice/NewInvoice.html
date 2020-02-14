@@ -23,7 +23,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <span>Customer:</span><br>
-                                                <select name="customer">
+                                                <select name="customer" id="selectVal">
                                                     {% for customer in customers %}
                                                     <option value="{{customer.id}}">{{customer.name}}</option>
                                                     {% endfor %}
@@ -72,4 +72,10 @@
                         </div>
                     </div>
                 </div>
+<script>
+$(document).ready(()=>{
+		$(".sidebar").find(".active").removeClass("active");
+		$("#invoices").addClass("active")
+		});
+		</script>
           {% endblock %}

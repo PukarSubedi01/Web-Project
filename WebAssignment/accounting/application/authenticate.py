@@ -9,7 +9,7 @@ class Authentication:
                 user.objects.get(email=request.session['email'], password = request.session['password'])
                 return function (request)
             except:
-                messages.warning(request,'The username/password you entered doesnot exist.Try again later!')
+                messages.warning(request,'Please login first')
                 return redirect('/index')
         return wrap
 

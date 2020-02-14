@@ -57,6 +57,6 @@ def delete_customer(request, id):
 
 @Authentication.valid_user
 def searchCustomers(request):
-    customers = customer.objects.filter(name__icontains=request.GET['searchCustomers']).values()
+    customers = customer.objects.filter(name__icontains=request.GET['searchCustomers'],user_id=request.session['user_id']).values()
     return JsonResponse(list(customers), safe=False)
 

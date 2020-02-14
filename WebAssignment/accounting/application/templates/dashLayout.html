@@ -7,12 +7,14 @@
     {% load static %}
     <link rel="stylesheet" href={% static "/stylesheets/dashStyle.css" %}>
     <link rel="stylesheet" href={% static "/stylesheets/bootstrap.min.css" %}>
+    <script type="text/javascript" src={% static "scripts/jquery-3.4.1.min.js" %}></script>
+    <script type="text/javascript" src={% static "scripts/Chart.min.js" %}></script>
     <title>Accounting</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar-nav navbar-expand-md fixed-top" style="background-color: #212121;">
+        <nav class="navbar navbar-expand-md fixed-top" style="background-color: #212121;">
             <li class="nav-item">
                 <button class="sideMenuToggler" type="button">
                     <span>
@@ -22,7 +24,7 @@
                             alt="Logo"><span class="text"> Accounting</span></a>
 
             </li>
-
+            <li class = "nav-item ml-auto" style="margin-right:40px;"><a style="color: #878d8d;" href="/logout">Logout</a></li>
 
 
 
@@ -34,76 +36,51 @@
             <div class="sidebar">
                 <div class="navbar-nav">
 
-                    <li class="nav-item">
+                    <li id="dashboard1" class="nav-item active">
                         <a href="/dashboard" class="nav-link" id="dashboard">
                             <i><img src={% static "/images/icons/dashboard.png" %} alt="dashboard icon"></i><span
                                 class="text">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li id="items1" class="nav-item">
                         <a href="/items" class="nav-link" id="items">
-                            <i><img src={% static "/images/icons/items.png" %} alt="dashboard icon"></i><span
+                            <i><img src={% static "/images/icons/items.png" %} alt="items icon"></i><span
                                 class="text">Items</span>
                         </a>
                     </li>
-                    <li class="nav-item tree1">
-                        <a href="#" class="nav-link">
-                            <i><img src={% static "/images/icons/income.png" %} alt="income icon"></i><span class="text">Income</span>
-                            <i class="arrow"><img src={% static "/images/icons/arrow.png" %} style="height: 15px; width: 15px;"
-                                    alt=""></i>
+                    <li id="invoices" class="nav-item">
+                        <a href="/invoices" class="nav-link">
+                            <i><img src={% static "/images/icons/bills.png" %} alt="invoice icon"></i><span
+                                class="text">Invoices</span>
                         </a>
-                        <ul class="nested1">
-                            <a href="/invoices">
-                                <li>Invoices</li>
-                            </a>
-                            <a href="/customers">
-                                <li>Castomers</li>
-                            </a>
-                        </ul>
                     </li>
-                    <li class="nav-item tree2">
-                        <a href="#" class="nav-link">
-                            <i><img src={% static "/images/icons/expense.png" %} alt="income icon"></i><span
-                                class="text">Expense</span>
-                            <i class="arrow"><img src={% static "images/icons/arrow.png" %} style="height: 15px; width: 15px;"
-                                    alt=""></i>
+                    <li id="customers" class="nav-item">
+                        <a href="/customers" class="nav-link">
+                            <i><img src={% static "/images/icons/customers.png" %} alt="customers icon"></i><span
+                                class="text">Customers</span>
                         </a>
-                        <ul class="nested2">
-                            <a href="/bills">
-                                <li>Bills</li>
-                            </a>
-                            <a href="/vendors">
-                                <li>Vendors</li>
-                            </a>
-                        </ul>
+                    </li>
+                    <li id="bills" class="nav-item">
+                        <a href="/bills" class="nav-link">
+                            <i><img src={% static "/images/icons/bills.png" %} alt="bill icon"></i><span
+                                class="text">Bills</span>
+                        </a>
+                    </li>
+                    <li id="vendors" class="nav-item">
+                        <a href="/vendors" class="nav-link">
+                            <i><img src={% static "/images/icons/customers.png" %} alt="vendor icon"></i><span
+                                class="text">Vendors</span>
+                        </a>
                     </li>
                 </div>
             </div>
         </div>
         <div class="content">
-            <main>
+            <main style="margin-top:40px;">
                 {% block content %}{% endblock %}
             </main>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
 
     <script type="text/javascript" src={% static "scripts/dashScript.js" %}></script>
 </body>
