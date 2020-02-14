@@ -1,8 +1,8 @@
-//searching by ajax block
+//start of searching by ajax block
 $(document).ready(function() {
     $("#searchInv").keyup(()=>{
         $.ajax({
-            data:{searchInv:$("#searchInv").val()},
+            data:{searchInv:$("#searchInv").val()}, //searching invoices
             url:'/searchInv',
             method:'GET',
             success:function(data){
@@ -26,7 +26,7 @@ $(document).ready(function() {
      });
       $("#searchItem").keyup(()=>{
         $.ajax({
-            data:{searchItem:$("#searchItem").val()},
+            data:{searchItem:$("#searchItem").val()}, //searching item
             url:'/searchItem',
             method:'GET',
             success:function(data){
@@ -51,7 +51,7 @@ $(document).ready(function() {
 
      $("#searchCustomers").keyup(()=>{
         $.ajax({
-            data:{searchCustomers:$("#searchCustomers").val()},
+            data:{searchCustomers:$("#searchCustomers").val()}, //searching customers
             url:'/searchCustomers',
             method:'GET',
             success:function(data){
@@ -75,7 +75,7 @@ $(document).ready(function() {
 
       $("#searchBills").keyup(()=>{
         $.ajax({
-            data:{searchBills:$("#searchBills").val()},
+            data:{searchBills:$("#searchBills").val()}, //searching bills
             url:'/searchBills',
             method:'GET',
             success:function(data){
@@ -100,7 +100,7 @@ $(document).ready(function() {
 
      $("#searchVendors").keyup(()=>{
         $.ajax({
-            data:{searchVendors:$("#searchVendors").val()},
+            data:{searchVendors:$("#searchVendors").val()}, //seraching vendors
             url:'/searchVendors',
             method:'GET',
             success:function(data){
@@ -121,18 +121,13 @@ $(document).ready(function() {
         }
         });
      });
+    //end of search block
 
-    $(".sideMenuToggler").on("click", function (){
+
+    $(".sideMenuToggler").on("click", function (){ //this script activates class named activate onclick of dashboard toggle button
         $(".wrapper").toggleClass("activate");
     });
-    $(".tree1").on("click", function () {
-        $(".nested1").toggleClass("nesting1");
-        // $(".nested2").toggleClass("nesting");
-    });
-    $(".tree2").on("click", function () {
-        $(".nested2").toggleClass("nesting2");
-        // $(".nested2").toggleClass("nesting");
-    });
+
 });
 
 //calculating total amount in bills and invoives
@@ -144,8 +139,8 @@ function setTotal(){
     document.getElementById('total').value=total;
 
 }
-
-function check_fields($event,errorMsgs){
+// submit data form validation block
+function check_fields($event,errorMsgs){    //takes to argument of id's as a parameter where 1st one is textfield id and other error msg span id
      var fieldValue = $("#"+$event.getAttribute("id")).val();
             if (fieldValue !== '') {
                $("#"+errorMsgs).hide();
@@ -209,7 +204,7 @@ function check_fields($event,errorMsgs){
             }
 
          });
-
+//this disables pagination to decrease from 1
 if($("#page").val() == 1){
     $("#prev").prop("disabled",true)
 }

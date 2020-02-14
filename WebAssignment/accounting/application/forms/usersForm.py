@@ -2,7 +2,7 @@ from django import forms
 from application.models.user import user
 
 class userForm(forms.ModelForm):
-    fullname = forms.CharField(widget=forms.TextInput(
+    fullname = forms.CharField(widget=forms.TextInput(  #Styling textareas through widgets
         attrs= {
             'class': 'form-control',
             'placeholder': 'Enter your name',
@@ -11,7 +11,7 @@ class userForm(forms.ModelForm):
             }
     )
     )
-    email = forms.CharField(widget=forms.TextInput(
+    email = forms.CharField(widget=forms.TextInput(     #Styling textareas through widgets
         attrs={
             'class': 'form-control',
             'placeholder': 'E-mail address',
@@ -20,7 +20,7 @@ class userForm(forms.ModelForm):
             'id': 'email'
         }
     ))
-    password = forms.CharField(widget=forms.TextInput(
+    password = forms.CharField(widget=forms.TextInput(      #Styling textareas through widgets
         attrs={
             'class': 'form-control',
             'placeholder': 'Re-type password',

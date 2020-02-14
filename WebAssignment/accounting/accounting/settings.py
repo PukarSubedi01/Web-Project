@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'accounting.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_accounting',
+        'ENGINE': 'django.db.backends.mysql', #mysql database engine name
+        'NAME': 'db_accounting',  #name of database
         'USER': 'root',
         'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '3306'
+        'HOST': '127.0.0.1', #localhost IP address
+        'PORT': '3306'  #Port number
     }
 }
 

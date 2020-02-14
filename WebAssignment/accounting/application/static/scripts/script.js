@@ -19,7 +19,7 @@ $('.close').on('click', function () { //function to close login form
 $('.navbar-toggler').on('click', function () { //making nav bar white when clicked on toggle button.
     $('nav').addClass('navCustom')
 });
-
+//signup form validation block
 $(document).ready(function() {
 
          $("#name_error_message").hide();
@@ -46,7 +46,7 @@ $(document).ready(function() {
          });
 
          function check_fullName() {
-            var pattern = /^[a-zA-Z\-\s]+$/;
+            var pattern = /^[a-zA-Z\-\s]+$/;  //regex to match pattern
             var name = $("#fullname").val();
             if (pattern.test(name) && name !== '') {
                $("#name_error_message").hide();
@@ -120,3 +120,4 @@ $(document).ready(function() {
 
          });
       });
+      //end of signup form validation block
