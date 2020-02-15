@@ -63,7 +63,6 @@ urlpatterns = [
     path('searchCustomers', customerView.searchCustomers),
     path('searchBills', billView.searchBills),
     path('searchVendors', vendorView.searchVendors),
-
     path('logout', views.logout)
 
 ]

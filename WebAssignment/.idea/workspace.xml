@@ -24,7 +24,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -76,10 +76,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="191" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1580633854998" />
-    <state x="279" y="66" key="SettingsEditor" timestamp="1581436278081">
+    <state x="248" y="0" key="SettingsEditor" timestamp="1581742412326">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="279" y="66" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1581436278081" />
+    <state x="248" y="0" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1581742412326" />
     <state x="473" y="66" width="590" height="732" key="find.popup" timestamp="1581479979797">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
